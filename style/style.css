@@ -1,0 +1,191 @@
+@import url("./normalize.css");
+@import url("./grid.css");
+
+/* vars */
+:root {
+  --background-color: #131313;
+  --body-color:  #bfbcba;
+  --black-color:  #000000;
+  --base-font-size: 18px;
+  --fluid-typography-ratio: 0.6;
+}
+
+@font-face {
+    font-family: 'soehne';
+    src: url('./font/soehne-buch.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'soehne';
+    src: url('./font/soehne-buch-kursiv.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'soehne';
+    src: url('./font/soehne-dreiviertelfett.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'soehne';
+    src: url('./font/soehne-dreiviertelfett-kursiv.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+body {
+  background-color: var(--background-color);
+  color: var(--body-color);
+  font-family: 'soehne', Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: var(--base-font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body p {
+  line-height: 1.4em;
+  margin: 0 0 1.4em 0;
+}
+
+body p:last-child {
+  margin: 0
+}
+
+/*GENERAL*/
+
+strong {
+  font-weight: 800;
+}
+
+h1 {
+  font-weight: 400;
+  margin: 0;
+}
+
+h2, h3 {
+  margin: 0 0 .75em 0;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.inner-pad {
+  padding: 0rem 2rem 2rem 2rem;
+}
+
+::selection { 
+  background: var(--body-color);
+  color: var(--background-color);
+}
+
+@media all and (max-width: 699px) { 
+
+  .inner-pad {
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 1.75em;
+  }
+
+}
+
+#coming-soon {
+  width: 100vw;
+  height:  100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#coming-inner {
+  width: 90vw;
+}
+
+.quote {
+  background:  var(--black-color);
+  padding: 1em;
+}
+
+.quote p {
+  font-size: 1.25em;
+  font-weight:  800;
+}
+
+.quote p.citation {
+  font-weight:  300;
+}
+
+.std {
+  background:  var(--body-color);
+  color: var(--background-color);
+  padding: 1em;
+  text-align: center;
+}
+
+/*TRANSITIONS*/
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.fade-in {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease-out, transform 2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transition-delay: .5s;
+  transform: none;
+  visibility: visible;
+}
+
+/*Font Sizing */
+
+a:focus,button:focus,input:focus,textarea:focus {outline: none;}
+
+@media all and (min-width: 699px) { 
+
+  #coming-inner {
+  width: 50vw;
+}
+  
+  body{
+    font-size: calc(var(--base-font-size) + var(--fluid-typography-ratio) * .9vw);
+  }
+
+}
+
+@media all and (min-width: 1260px) {
+
+  body{
+    font-size: calc(var(--base-font-size) + var(--fluid-typography-ratio) * 17px);
+  }
+
+  #coming-inner {
+  width: 30vw;
+}
+
+}
