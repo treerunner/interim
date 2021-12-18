@@ -56,7 +56,7 @@ body {
 
 body p {
   line-height: 1.4em;
-  margin: 0 0 1.4em 0;
+  margin: 0 0 1em 0;
 }
 
 body p:last-child {
@@ -127,7 +127,7 @@ h2 {
 }
 
 .quote p {
-  font-size: 1.25em;
+  font-size: 1.4em;
   font-weight:  800;
 }
 
@@ -139,7 +139,10 @@ h2 {
   background:  var(--body-color);
   color: var(--background-color);
   padding: 1em;
-  text-align: center;
+}
+
+.std p {
+  font-size: .75em;
 }
 
 /*TRANSITIONS*/
